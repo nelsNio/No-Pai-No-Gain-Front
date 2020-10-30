@@ -1,0 +1,46 @@
+<!-- <app-navbar></app-navbar> -->
+<div class="container-fluid">
+
+    <h1>
+        Sede <small>Registro de sede</small> </h1>
+    <hr>
+    <div class="row text-right">
+        <div class="col">
+            <button class="btn btn-danger" routerLink="/home/sedes">
+      <i class="fa fa-arrow-left"></i>
+      Regresar
+    </button>
+        </div>
+    </div>
+
+    <div class="row animated fadeIn faster">
+        <div class="col">
+
+            <form (ngSubmit)="guardar( f )" #f="ngForm">
+
+
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" class="form-control" placeholder="Nombre de sede" [(ngModel)]="sede.name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="Cities">Seleccione un lugar</label>
+                    <select [(ngModel)]="sede.city" class="form-control" name="ciudad">
+                <option  value="" >Seleccione un lugar</option>
+                <option *ngFor="let city of cities" [value] ="city.idcity" >{{city.namecity}}</option>
+                </select>
+
+                </div>
+                <hr>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary w-25">
+                <i class="fa fa-save"></i>
+                        Guardar
+                    </button>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</div>

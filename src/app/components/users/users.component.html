@@ -1,0 +1,52 @@
+<!-- <app-navbar></app-navbar> -->
+
+
+
+<div class="card">
+    <div class="card-header">
+        <h2 class="col text-center"> <span class="badge badge-primary">Lista general de Usuarios</span>
+        </h2>
+
+    </div>
+
+    <div class="card-body">
+        <!-- <div class="row">
+            <div class="col text-right">
+                <button routerLink="/home/sedes/new" class="btn btn-primary">
+                    <i class="fa fa-plus"></i>
+                    Registrar
+                  </button>
+            </div>
+        </div> -->
+
+        <h2></h2>
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Id</th>
+                    <th scope="col">NAME</th>
+                    <th scope="col">APELLIDO</th>
+                    <th scope="col">ROLE</th>
+                    <th scope="col">EMAIL</th>
+                </tr>
+            </thead>
+            <tbody *ngFor=" let user of users">
+                <tr>
+                    <th>{{user.iduser}}</th>
+                    <th>{{user.name | titlecase}}</th>
+                    <th>{{user.lastname | titlecase}}</th>
+                    <th>{{user.role | titlecase}}</th>
+                    <th>{{user.email }}</th>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <div *ngIf="users.length === 0" class="alert alert-warning text-center mt-3 animated fadeIn faster">
+            <h4 class="alert-heading">No hay registros</h4>
+            <p>
+                <i class="fa fa-exclamation fa-2x"></i>
+            </p>
+        </div>
+    </div>
+</div>
